@@ -2,7 +2,7 @@
 // =============================
 
 // This code will run as soon as the page loads
-window.onload = function() {
+window.onload = function () {
   $("#stop").on("click", stop);
   $("#reset").on("click", reset);
   $("#pause").on("click", pause);

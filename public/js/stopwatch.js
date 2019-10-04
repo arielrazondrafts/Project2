@@ -2,7 +2,7 @@
 // =============================
 
 // This code will run as soon as the page loads
-window.onload = function() {
+this.onload = function () {
   $("#stop").on("click", stop);
   $("#reset").on("click", reset);
   $("#pause").on("click", pause);
@@ -82,3 +82,33 @@ function timeConverter(t) {
 
   return minutes + ":" + seconds;
 }
+
+exports.timer = {
+  intervalId: intervalId,
+  clockRunning: clockRunning,
+  time: time,
+  reset: function () {
+    this.time = 0;
+  },
+  start: function () {
+    // DONE: Use setInterval to start the count here and set the clock to running.
+    if (!this.clockRunning) {
+      this.intervalId = setInterval(this.count, 1000);
+      this.clockRunning = true;
+    }
+  },
+  pause: pause,
+  stop: function () {
+    // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+    clearInterval(this.intervalId);
+    this.clockRunning = false;
+  },
+  count: function () {
+    // DONE: increment time by 1, remember we cant use "this" here.
+    this.time++;
+    // DONE: Get the current time, pass that into the timeConverter function,
+    //       and save the result in a variable.
+    return this.time;
+  },
+  timeConverter: timeConverter
+};

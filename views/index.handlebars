@@ -5,42 +5,44 @@
         <h1>{{msg}}</h1>
 
         <h2>Outstanding Invoices</h2>
-<table>
-    <tr>
-      <th>Invoice Amount</th>
-      <th>Employer Name</th>
-      <th>Click When</th>
-    
-    </tr>
-  {{#each invoices}}
-  {{#unless paidStatus}}
-      
-       <tr><td>${{this.invoiceAmount}}</td>
-       <td>{{this.Employer.employerName}}</td>
-       <td><button class="paid" data-id="{{this.id}}">Paid</button></td>
-       </tr>
-  {{/unless}}
-  {{/each}}
-</table>
+        <table>
+          <tr>
+            <th>Invoice Amount</th>
+            <th>Employer Name</th>
+            <th>Click When</th>
+
+          </tr>
+          {{#each invoices}}
+          {{#unless paidStatus}}
+
+          <tr>
+            <td>${{this.invoiceAmount}}</td>
+            <td>{{this.Employer.employerName}}</td>
+            <td><button class="paid" data-id="{{this.id}}">Paid</button></td>
+          </tr>
+          {{/unless}}
+          {{/each}}
+        </table>
 
 
-<h2>Paid Invoices</h2>
-<table>
-    <tr>
-      <th>Invoice Amount</th>
-      <th>Employer Name</th>
-      <th>Date Paid</th>
-    </tr>
-  {{#each invoices}}
-  {{#if paidStatus}}
-      
-       <tr><td>{{this.invoiceAmount}}</td>
-       <td>{{this.Employer.employerName}}</td>
-       <td>{{this.updatedAt}}</td>
-       </tr>
-  {{/if}}
-  {{/each}}
-</table>
+        <h2>Paid Invoices</h2>
+        <table>
+          <tr>
+            <th>Invoice Amount</th>
+            <th>Employer Name</th>
+            <th>Date Paid</th>
+          </tr>
+          {{#each invoices}}
+          {{#if paidStatus}}
+
+          <tr>
+            <td>{{this.invoiceAmount}}</td>
+            <td>{{this.Employer.employerName}}</td>
+            <td>{{this.updatedAt}}</td>
+          </tr>
+          {{/if}}
+          {{/each}}
+        </table>
 
       </div>
     </div>
