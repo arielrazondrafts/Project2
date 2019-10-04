@@ -1,11 +1,11 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/", function(req, res) {
     db.Invoice.findAll({
       include: [db.Employer]
-    }).then(function (dbInvoices) {
+    }).then(function(dbInvoices) {
       res.render("index", {
         msg: "Welcome!",
         invoices: dbInvoices
@@ -13,26 +13,25 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/employers", function (req, res) {
-    db.Employer.findAll({}).then(function (dbEmployer) {
+  app.get("/employers", function(req, res) {
+    db.Employer.findAll({}).then(function(dbEmployer) {
       res.render("employers", {
         employer: dbEmployer
       });
     });
   });
 
-
   // Load example page and pass in an example by id
-  app.get("/timer", function (req, res) {
+  app.get("/timer", function(req, res) {
     res.render("timer");
   });
 
-  app.get("/sendReminder", function (req, res) {
+  app.get("/sendReminder", function(req, res) {
     res.render("sendReminder");
   });
 
-  app.get("/invoice", function (req, res) {
-    db.Employer.findAll({}).then(function (dbEmployer) {
+  app.get("/invoice", function(req, res) {
+    db.Employer.findAll({}).then(function(dbEmployer) {
       res.render("invoice", {
         employerObj: JSON.stringify(dbEmployer),
         employer: dbEmployer
@@ -50,7 +49,7 @@ module.exports = function (app) {
   // });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
