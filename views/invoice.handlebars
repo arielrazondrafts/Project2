@@ -1,8 +1,13 @@
-
-
+<link rel="stylesheet" href="/HTML-CSS/layout/styles/table.css" media="all" type="text/css" charset="utf-8">
+<div class="bgded overlay" style="background-image: url('HTML-CSS/images/backgrounds/01.png')">
+   
+<div id="pageintro" class="hoc clear">
+    
+<div class="row">
+    <div class="card-body col-6" style="background: rgb(255,255,255,.7)">
 <h2>Generate invoice</h2>
-        <div class="card-body">
-<select class="selectedEmployer">
+        
+<select class="selectedEmployer" style="color: black">
     <option disabled selected value> -- select an option -- </option>
   {{#each employer}}
        <option value={{this.id}}>{{this.employerName}}, {{this.employerEmail}}</option>
@@ -10,12 +15,12 @@
 </select>
           <!-- Sign-up Form (note the various input "types")-->
           <form role="form">
-            <div class="form-group row">
+            <div class="form-group">
               <label for="invoice-input">Invoice Amount: </label>
               <input class="form-control" id="invoice-input" type="text">
             </div>
 
-            <div class="form-group row">
+            <div class="form-group">
               <label for="employee-input">Employer ID: </label>
               <input class="form-control" id="employer-id-input" type="text">
             </div>
@@ -24,34 +29,35 @@
             <button class="btn btn-default" id="add-invoice" type="button">Submit</button>
           </form>
 
-        </div>
+        </span>
+   </div>
+            
+        <div id="wrapper" class="col-6" style="float: right; background: rgb(255,255,255,.7); text-align: center; padding-top: 50px;">
 
-        <div id="wrapper">
-
-      <div id="display">00:00</div>
+      <div id="display" style="font-size: 40px; margin-bottom: 10px">00:00</div>
 
       <!-- Div containing our stopwatch controls -->
       <div id="buttons">
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-        <button id="stop">Stop</button>
-        <button id="reset">Reset</button>
+        <button id="start" style="display: inline-block; color: black">Start</button>
+        <button id="pause" style="display: inline-block; color: black">Pause</button>
+        <button id="stop" style="display: inline-block; color: black">Stop</button>
+        <button id="reset" style="display: inline-block; color: black">Reset</button>
 
       </div>
 
       <div id="timeMessage"></div>
       
       <label for="rate-input">Hourly Rate:</label>
-              <input class="form-control" id="hourly" type="text">
+              <input class="form-control" id="hourly" type="text" placeholder="$" style="width: 80%; margin-left: 50px">
     </div>
-
+</div>
 
             <!-- Script -->
             <script src="/js/stopwatch.js"><{{!}}</script>
 
 <!-- jQuery -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<br>
   <button onclick="selectEmployer({{employerObj}})">Generate PDF</button>
 
 x 

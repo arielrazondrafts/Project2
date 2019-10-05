@@ -12,7 +12,7 @@ module.exports = function(app) {
 
     var mailOptions = {
       from: req.body.email,
-      to: "rhondakremer@gmail.com",
+      to: req.body.sendTo,
       subject: req.body.subject,
       text: req.body.message,
       attachments: [

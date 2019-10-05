@@ -1,4 +1,14 @@
 $(function() {
+
+    $("select.selectedEmployer").change(function() {
+        console.log(this.employerEmail)
+        var selectedEmployer = $(this)
+          .children("option:selected")
+          .val();
+        $("#email-to-input").val(selectedEmployer);
+        
+      });
+
   $("#initial-message").on("click", function() {
     event.preventDefault();
     $("#subject-input").val("Invoice");
@@ -32,6 +42,9 @@ $(function() {
     var password = $("#password-input")
       .val()
       .trim();
+    var sendTo = $("#email-to-input")
+      .val()
+      .trim()
     var subject = $("#subject-input")
       .val()
       .trim();
@@ -46,6 +59,7 @@ $(function() {
       serviceInput: serviceInput,
       email: email,
       password: password,
+      sendTo: sendTo,
       subject: subject,
       message: message,
       path: path

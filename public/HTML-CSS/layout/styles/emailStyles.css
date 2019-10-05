@@ -1,0 +1,27 @@
+.wrapper60{
+    width:60%;
+    margin: auto;
+    background-color: rgb(59, 58, 64, 0.7);
+    border-radius: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+button{
+    display:inline-block;
+    margin-left: 5%;
+    color: black;
+    border-radius: 10%;
+}
+p{
+    margin-left: 5%;
+}
+.form-group{
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.selectedEmployer{
+    margin-left: 5%;
+    color: black;
+}
+
+/* background-color: #3B3A40;
