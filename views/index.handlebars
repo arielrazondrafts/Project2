@@ -69,41 +69,7 @@
         <footer id="footer" class="hoc clear">
             <!-- ################################################################################################ -->
 
-            
-            <div class="one_quarter">
-                <h6 class="title">Outstanding Invoices</h6>
-                <ul class="nospace linklist">
-                    {{#each invoices}}
-                    {{#unless paidStatus}}
-                      
-                        <li><a href="#">{{this.Employer.employerName}}</a></li>
-                        
-                    {{/unless}}
-                    {{/each}}
-                    </li>
-                    <li>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="one_quarter">
-                <h6 class="title">Amount Due</h6>
-                <ul class="nospace linklist">
-                    <li>
-                        <article>
-                        {{#each invoices}}
-                        {{#unless paidStatus}}
-                            
-                            <li><a href="#">{{this.invoiceAmount}}</a></li>
-          
-                        {{/unless}}
-                        {{/each}}
-                        </article>
-                    </li>
-                    <li>
-                    </li>
-                </ul>
-            </div>
+        
             <!-- ################################################################################################ -->
         </footer>
     </div>
